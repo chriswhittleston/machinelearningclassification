@@ -14,7 +14,7 @@ gColours = ["blue", "magenta", "cyan"]
 gIndices = [0, 1, 2]
 #Column indices for the two features you want to plot against each other:
 f1 = 0
-f2 = 1
+f2 = 3
 
 for mark, col, i, iris.target_name in zip(gMarkers, gColours, gIndices, labels):
    plt.scatter(x = X[iris.target == i, f1], 
