@@ -70,7 +70,7 @@ correlationMatrix = numpy.corrcoef(X, rowvar=0)
 # plot matrix of scatter plots for features - histograms for self/self
 def scatter_plot(X,y):
     # set the figure size (scales by the size of the X input array and a constant)
-    plt.figure(figsize = (3*X.shape[1],3*X.shape[1]))
+    plt.figure(figsize = (2*X.shape[1],2*X.shape[1]))
     # loop over every pair of columns
     for i in range(X.shape[1]):
         for j in range(X.shape[1]):
@@ -97,7 +97,7 @@ def scatter_plot(X,y):
 # pass in a limited slice of the X array - all rows and just first 5 columns (features)
 # y is the classification array (B/M) - why not use yTransformed?
 
-# scatter_plot(X[:,:5],y)
+scatter_plot(X[:, :5], y)
 
 # KNN algorithm
 
@@ -211,21 +211,21 @@ for k in ks:
     sdsKNNK15.append(knn3scores.std())
 
 # plot the mean accuracy for KNN3 and KNN15 as number of folds varies
-plt.plot(ks, meansKNNK3, label="KNN3 mean accuracy", color="purple")
-plt.plot(ks, meansKNNK15, label="KNN15 mean accuracy", color="yellow")
-plt.legend(loc=3)
-plt.ylim(0.5, 1)
-plt.title("Accuracy means with increasing number of folds K")
-plt.show()
+#plt.plot(ks, meansKNNK3, label="KNN3 mean accuracy", color="purple")
+#plt.plot(ks, meansKNNK15, label="KNN15 mean accuracy", color="yellow")
+#plt.legend(loc=3)
+#plt.ylim(0.5, 1)
+#plt.title("Accuracy means with increasing number of folds K")
+#plt.show()
 
 # plot the standard deviation...
 # plot the results
-plt.plot(ks, sdsKNNK3, label="KNN3 sd accuracy", color="purple")
-plt.plot(ks, sdsKNNK15, label="KNN15 sd accuracy", color="yellow")
-plt.legend(loc=3)
-plt.ylim(0, 0.1)
-plt.title("Accuracy standard deviations with increasing number of folds K")
-plt.show()
+#plt.plot(ks, sdsKNNK3, label="KNN3 sd accuracy", color="purple")
+#plt.plot(ks, sdsKNNK15, label="KNN15 sd accuracy", color="yellow")
+#plt.legend(loc=3)
+#plt.ylim(0, 0.1)
+#plt.title("Accuracy standard deviations with increasing number of folds K")
+#plt.show()
 
 # Tuning parameters (number of neighbors and weight method) using a grid search
 parameters = [{'n_neighbors':[1,3,5,10,50,100],
